@@ -1,0 +1,32 @@
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+void dice(int input) {
+	printf("주사위를 던져보자!: %d\n", input);
+}
+int add(int a, int b) {
+	return a + b;
+}
+int factorial(int a) {
+	if (a == 1) return 1;
+	else return a * factorial(a - 1);
+}
+
+
+int main(void) {
+	// 함수의 개념, 정의와 호출방법, 재귀함수.
+	//함수 = 입력 > 함수(처리) > 출력, 특정코드의 반복을 줄이기 위해 많이 사용. 반환자료형 함수명(매개변수), 매개변수 및 반환값이 없을때는 void자료형
+	//다양한 함수의 기능들을 묶어서 하나의 패키지형태로 묶음 > 라이브러리
+
+	//자기 자신을 포함하는 함수 > 재귀함수 > 기본적으로 자기자신을 불러냄. like 반복문 같은느낌. 무한루프 안되게 종료조건 잘 설정해야함.
+	
+	dice(1);
+	dice(3);
+	dice(5);
+	printf("%d\n", add(6, 10));
+	printf("6 팩토리얼! : %d\n", factorial(6));
+	
+	system("pause");
+	
+	return 0;
+}
