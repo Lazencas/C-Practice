@@ -1,6 +1,18 @@
 #include <stdio.h>
 #define _CRT_SECURE_NO_WARNINGS
 
+void function() {
+	printf("It's my function.");
+}
+
+void yourfunction() {
+	printf("It's your function.");
+}
+
+int aadd(int a, int b) {
+	return a + b;
+}
+
 void dice(int input) {
 	printf("주사위를 던져보자!: %d\n", input);
 }
@@ -26,6 +38,22 @@ int main(void) {
 	printf("%d\n", add(6, 10));
 	printf("6 팩토리얼! : %d\n", factorial(6));
 	
+	/*
+	함수포인터는  특정한 함수의 반환자료형을 지정하는 방식으로 선언할 수 있다.
+	함수포인터를 이용하면 형태가 같은 서로다른 기능의 함수를 선택적으로 사용 가능.
+	반환자료형 (*이름)(매개변수) = 함수명;
+	c언어 프로그램의 모든 함수는 내부적으로 포인터 형태로 관리 할 수 있다.
+	많이 사용되지는 않음.
+	
+	*/
+
+	void(*fp)() = function;
+	fp();
+	fp = yourfunction;
+	fp();
+
+	int(*ffp)(int, int) = add;
+	printf("%d\n", ffp(10, 3));
 	system("pause");
 	
 	return 0;
