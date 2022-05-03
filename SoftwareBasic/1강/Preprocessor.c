@@ -6,13 +6,17 @@
 
 
 int main(void) {
-	printf("%d\n", add(3, 7));
+	//printf("%d\n", add(3, 7));
+	//int r = 10;
+	//printf("원의 둘레: %2.f\n", 2 * PI * r);
+	//int x = 6;
+	//printf("x의 제곱: %d\n", POW(x));
 
-	int r = 10;
-	printf("원의 둘레: %2.f\n", 2 * PI * r);
+	printf("$d\n", add(3, 7));
+ 
 
-	int x = 6;
-	printf("x의 제곱: %d\n", POW(x));
+
+
 
 	system("pause");
 	return 0;
