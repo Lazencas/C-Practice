@@ -1,7 +1,22 @@
 #include <stdio.h>
 #define _CRT_SECURE_NO_WARNINGS
+#define INF 10000
 
+int arr[INF];
+int count = 0;
 
+void addBack(int data) {
+	arr[count] = data;
+	count++;
+}
+
+void addFirst(int data) {
+	for (int i = count; i >= 1; i--) {
+		arr[i] = arr[i - 1];
+	}
+	arr[0] = data;
+	count++;
+}
 
 
 int main(void) {
@@ -28,9 +43,13 @@ int main(void) {
 	효율적인 알고리즘을 사용한다고 가정했을 때 일반적으로 시간과 공간은 반비례 관계
 
 
+	연결리스트
+	일반적으로 배열을 사용하여 데이터를 순차적으로 저장하고, 나열할 수 있다
+	배열을 사용하는 경우 메모리 공간이 불필요하게 낭비
+
+	1 2 3 4 5 6 7 8
 
 	*/
-
 
 
 
