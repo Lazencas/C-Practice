@@ -1,23 +1,40 @@
 #include <stdio.h>
 #define _CRT_SECURE_NO_WARNINGS
 #define INF 10000
+#define SIZE 10000
 
-int arr[INF];
-int count = 0;
 
-void addBack(int data) {
-	arr[count] = data;
-	count++;
-}
+//int arr[INF];
+//int count = 0;
+//
+//void addBack(int data) {
+//	arr[count] = data;
+//	count++;
+//}
+//
+//void addFirst(int data) {
+//	for (int i = count; i >= 1; i--) {
+//		arr[i] = arr[i - 1];
+//	}
+//	arr[0] = data;
+//	count++;
+//}
+int top = -1;
+int stack[SIZE];
 
-void addFirst(int data) {
-	for (int i = count; i >= 1; i--) {
-		arr[i] = arr[i - 1];
+void push(int data) {
+	if (top == SIZE - 1) {
+
 	}
-	arr[0] = data;
-	count++;
 }
 
+void pop() {
+	if (top == -1) {
+		printf("스택 언더플로우가 발생");
+		return -INF;
+	}
+	return stack[top--];
+}
 
 int main(void) {
 	/*
@@ -49,6 +66,21 @@ int main(void) {
 
 	1 2 3 4 5 6 7 8
 
+    양방향 연결리스트
+	양방향 연결리스트는 머리와 꼬리를 모두 가진다
+	앞노드와 뒤노드의 정보를 모두 저장하고 있다.
+
+
+	스택
+	스택은 들어가는곳으로 나옴
+	배열을 이용한 구현방법과 연결리스트를 이용한 구현방법으로 나누어짐.
+	푸쉬, 팝
+
+	큐
+	뒤쪽으로 들어가서 앞쪽으로 들어가는 자료구조
+	배열을 이용한 구현방법과 연결리스트를 이용한 구현방법 2가지
+	가장 기본적인 형태의 자료구조
+	푸쉬, 팝
 	*/
 
 
