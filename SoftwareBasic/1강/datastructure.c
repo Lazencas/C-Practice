@@ -4,6 +4,7 @@
 #define SIZE 10000
 
 
+
 //int arr[INF];
 //int count = 0;
 //
@@ -19,22 +20,52 @@
 //	arr[0] = data;
 //	count++;
 //}
+
+
 int top = -1;
 int stack[SIZE];
+int queue[SIZE];
+int front = 0;
+int rear = 0;
 
 void push(int data) {
-	if (top == SIZE - 1) {
-
+	if (rear >= SIZE) {
+		printf("큐 오버플로우가 발생\n");
+		return;
 	}
+	queue[rear++] = data;
 }
 
-void pop() {
-	if (top == -1) {
-		printf("스택 언더플로우가 발생");
+int pop() {
+	if (front == rear) {
+		printf("큐 언더플로우가 발생\n");
 		return -INF;
 	}
-	return stack[top--];
+	return queue[front++];
 }
+
+void show() {
+	printf("--- 큐의 앞 ---\n");
+	for (int i = front; i < rear; i++) {
+		printf("%d\n", queue[i]);
+	}
+	printf("--- 큐의 뒤 ---\n");
+}
+
+
+//void push(int data) {
+//	if (top == SIZE - 1) {
+//
+//	}
+//}
+//
+//void pop() {
+//	if (top == -1) {
+//		printf("스택 언더플로우가 발생");
+//		return -INF;
+//	}
+//	return stack[top--];
+//}
 
 int main(void) {
 	/*
@@ -82,7 +113,13 @@ int main(void) {
 	가장 기본적인 형태의 자료구조
 	푸쉬, 팝
 	*/
-
+	push(3);
+	push(5);
+	push(7);
+	push(9);
+	pop();
+	push(1);
+	show();
 
 
 	system("pause");
